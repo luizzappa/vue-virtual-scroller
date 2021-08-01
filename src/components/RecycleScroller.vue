@@ -489,6 +489,10 @@ export default {
       clearTimeout(this.$_sortTimer)
       this.$_sortTimer = setTimeout(this.sortViews, 300)
 
+      /* Additional event */
+      if (endIndex === this.items.length) this.$emit('bottom', startIndex, endIndex)
+      /* !Additional event */
+
       return {
         continuous,
       }
